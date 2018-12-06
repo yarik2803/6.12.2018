@@ -1,0 +1,48 @@
+//tryCatch even or not numbers
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ex1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = 1;
+            do
+            {
+               try
+               {
+                   Console.Write("Enter a number: ");
+                   n = int.Parse(Console.ReadLine());
+                   if (n % 2 == 0)
+                   {
+                       Console.WriteLine("Even number entered: " + n);
+                       break;
+                   }
+                   else if(n % 2 != 0)
+                   {
+                       Console.WriteLine("The number is not even");
+                   }
+               }
+               catch (FormatException ex)
+               {
+                   Console.WriteLine(ex.Message);
+               }
+               catch(OverflowException ex)
+               {
+                   Console.WriteLine(ex.Message);
+               }
+               catch (Exception ex)  // for the rest exceptions
+               {
+                   Console.WriteLine(ex.Message);
+               }
+            } while (true);
+            
+        }
+    }
+}
