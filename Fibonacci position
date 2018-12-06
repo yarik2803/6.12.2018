@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ex2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            List<int> fibonacci = new List<int>();
+            fibonacci.Add(1);
+            fibonacci.Add(1);
+            
+            for (int i = 2; i <= number - 1; i++)
+            {
+                fibonacci.Add(fibonacci[i - 2] + fibonacci[i - 1]);
+            }
+            Console.WriteLine(fibonacci[number - 1]);
+        }
+    }
+}
